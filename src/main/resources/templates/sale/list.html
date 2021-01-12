@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List Sales</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+</head>
+
+    <body>
+    
+<div class="container">
+    <div th:if="${not #lists.isEmpty(sales)}">
+
+        <h2>List of all sales made ever</h2>
+
+        <table class="table table-striped">
+            <tr style="background-color: #0dff00">
+                <th>Representative</th>
+                <th>Client</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sale Value</th>
+                <th>Date</th>
+            </tr>
+
+            <tr th:each="sale : ${sales}">
+                <td th:text="${sale.representative}"></td>
+                <td th:text="${sale.client}"></td>
+                <td th:text="${sale.product}"></td>
+                <td th:text="${sale.price}"></td>
+                <td th:text="${sale.quantity}"></td>
+                <td th:text="${sale.value}"></td>
+                <td th:text="${sale.date}"></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+    </body>
+
+    <body>
+        <div class="container">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/sale/new">New Sale</a>
+        </div>
+    </div>
+
+    <ul></ul>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/representative/list">Go to REPRESENTATIVES list</a>
+        </div>
+    </div>
+
+        </div>
+    </body>
+
+</html>

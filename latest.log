@@ -1,0 +1,42 @@
+2021-01-06 23:10:54.940  INFO 516 --- [main] Okan.Project.SapProjectApplication       : Starting SapProjectApplication using Java 15.0.1 on Kanchor with PID 516 (E:\Programming\Java IntelliJ\Project\target\classes started by Kanchor in E:\Programming\Java IntelliJ\Project)
+2021-01-06 23:10:54.962  INFO 516 --- [main] Okan.Project.SapProjectApplication       : No active profile set, falling back to default profiles: default
+2021-01-06 23:10:55.524  INFO 516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-01-06 23:10:55.525  INFO 516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-01-06 23:10:55.547  INFO 516 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface Okan.Project.repositories.AdminRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-01-06 23:10:55.549  INFO 516 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface Okan.Project.repositories.ClientRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-01-06 23:10:55.551  INFO 516 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface Okan.Project.repositories.ProductRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-01-06 23:10:55.553  INFO 516 --- [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface Okan.Project.repositories.RepresentativeRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2021-01-06 23:10:55.553  INFO 516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 JDBC repository interfaces.
+2021-01-06 23:10:55.560  INFO 516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-01-06 23:10:55.560  INFO 516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-01-06 23:10:55.587  INFO 516 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+2021-01-06 23:10:55.948  INFO 516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-01-06 23:10:55.955  INFO 516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-01-06 23:10:55.955  INFO 516 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-01-06 23:10:56.056  INFO 516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-01-06 23:10:56.057  INFO 516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1041 ms
+2021-01-06 23:10:56.105 ERROR 516 --- [main] com.zaxxer.hikari.HikariConfig           : Failed to load driver class com.mysql.cj.jdbc.Driver from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@4b1210ee
+2021-01-06 23:10:56.107  WARN 516 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource
+2021-01-06 23:10:56.110  INFO 516 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-01-06 23:10:56.121  INFO 516 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-01-06 23:10:56.131 ERROR 516 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource:
+
+    Property: driver-class-name
+    Value: com.mysql.cj.jdbc.Driver
+    Origin: "driverClassName" from property source "source"
+    Reason: Failed to load driver class com.mysql.cj.jdbc.Driver in either of HikariConfig class loader or Thread context classloader
+
+Action:
+
+Update your application's configuration
+

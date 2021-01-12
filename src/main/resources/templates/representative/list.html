@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List Representatives</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+</head>
+
+    <body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(representatives)}">
+        <h2>Representative List</h2>
+        <table class="table table-striped">
+            <tr style="background-color: #fdff00">
+                <th>Username</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            <tr th:each="representative : ${representatives}">
+                <td th:text="${representative.username}"></td>
+                <td><a th:href="${'/representative/show/' + representative.id}">View</a> </td>
+                <td><a th:href="${'/representative/edit/' + representative.id}">Edit</a> </td>
+                <td><a th:href="${'/representative/delete/' + representative.id}">Delete</a> </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <ul></ul>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/representative/new">New Representative</a>
+        </div>
+    </div>
+
+    <ul></ul>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/product/list">Go to PRODUCTS list</a>
+        </div>
+    </div>
+
+    <ul></ul>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/client/list">Go to CLIENTS list</a>
+        </div>
+    </div>
+
+    <ul></ul>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/sale/list">Go to SALES list</a>
+        </div>
+    </div>
+
+    <ul></ul>
+
+</div>
+
+    </body>
+
+</html>

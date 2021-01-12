@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show representative</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+</head>
+
+    <body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 style="background-color: #fdff00">Representative details</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+
+            <form class="form-horizontal">
+                <div class="form-group">
+
+                    <label class="col-sm-2 control-label">Representative Id:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${representative.id}">Representative Id</p>
+                    </div>
+                </div>
+
+                <ul></ul>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Username:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${representative.username}">Username</p>
+                    </div>
+                </div>
+
+                <ul></ul>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <a href="/representative/list">Back to Representative list</a>
+                    </div>
+                </div>
+
+                <ul></ul>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+    </body>
+
+</html>

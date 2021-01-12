@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Representative Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+</head>
+
+    <body>
+
+<div class="container">
+
+    <h2 style="background-color: #fdff00">Add a new representative</h2>
+
+    <div>
+        <form class="form-horizontal" th:object="${representativeForm}" th:action="@{/representative}" method="post">
+
+            <div class="form-group" th:class="${#fields.hasErrors('username')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Username:</label>
+                <div class="col-sm-10">
+                    <label>
+                        <input type="text" class="form-control" th:field="*{username}" th:errorclass="has-error"/>
+                    </label>
+                </div>
+            </div>
+
+            <ul></ul>
+
+            <div class="form-group" th:class="${#fields.hasErrors('password')} ? 'form-group has-error' : 'form-group'">
+                <label class="col-sm-2 control-label">Password:</label>
+                <div class="col-sm-10">
+                    <label>
+                        <input type="password" class="form-control" th:field="*{password}" th:errorclass="has-error"/>
+                    </label>
+                </div>
+            </div>
+
+            <ul></ul>
+
+            <div class="row">
+                <button type="submit" class="btn btn-default">Add the new representative!</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+    </body>
+
+</html>
